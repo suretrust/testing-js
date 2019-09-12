@@ -7,7 +7,7 @@ const ceaserCipher = (string) => {
             answer.push('A');
         } else if (element === 'z') {
             answer.push('a');
-        } else if (".!?-:;\\-".includes(element)){
+        } else if (".!?-:;\\-".includes(element)) {
             answer.push(element);
         } else {
             answer.push(getNextChar(element));
