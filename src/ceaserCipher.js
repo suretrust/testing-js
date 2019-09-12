@@ -7,12 +7,18 @@ const ceaserCipher = (string) => {
             answer.push('A');
         } else if (element === 'z') {
             answer.push('a');
+        } else if (".!?-:;\\-".includes(element)){
+            answer.push(element);
         } else {
-            answer.push(String.fromCharCode(element.charCodeAt() + 1));
+            answer.push(getNextChar(element));
         }
     });
 
     return answer.join('');
 }
+
+const getNextChar = (element) => {
+    return String.fromCharCode(element.charCodeAt() + 1);
+};
 
 module.exports = ceaserCipher;
