@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const ceaserCipher = require('../src/ceaserCipher');
 
 test('returns the ceaser cipher for the given string', () => {

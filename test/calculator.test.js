@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const calculator = require('../src/calculator');
 
 test('adds 4 and 3', () => {
