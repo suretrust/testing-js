@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const arrayAnalysis = require('../src/arrayAnalysis');
 
 test('returns an object that contains average, min, max, and length of the array', () => {
