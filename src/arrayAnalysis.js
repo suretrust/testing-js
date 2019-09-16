@@ -1,4 +1,6 @@
-const average = (array) => array
+/* eslint-disable arrow-parens */
+
+const average = array => array
   .reduce((curr, acc) => curr + acc, 0) / array.length;
 
 const arrayAnalysis = (array) => ({

@@ -1,4 +1,6 @@
-const getNextChar = (element) => String.fromCharCode(element.charCodeAt() + 1);
+/* eslint-disable arrow-parens */
+
+const getNextChar = element => String.fromCharCode(element.charCodeAt() + 1);
 
 const ceaserCipher = (string) => {
   const answer = [];
