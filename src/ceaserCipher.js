@@ -11,25 +11,20 @@ const ceaserCipher = (string, shift) => {
   const isUpperCase = char => upperCase.includes(char);
   const isLowerCase = char => lowerCase.includes(char);
 
-  const lowerCipherIndex = (element) => {
-    let index = lowerCase.indexOf(element) + shift;
+  const getIndex = (element, caseType) => {
+    let index = caseType.indexOf(element) + shift;
     if (index > 25) index %= 26;
     return index;
   };
 
-  const upperCipherIndex = (element) => {
-    let index = upperCase.indexOf(element) + shift;
-    if (index > 25) index %= 26;
-    return index;
-  };
+  const lowerCaseCipherIndex = (element) => getIndex(element, lowerCase);
+  const upperCaseCipherIndex = (element) => getIndex(element, upperCase);
 
   array.forEach((element) => {
     if (isLowerCase(element)) {
-      const lowerIndex = lowerCipherIndex(element, shift);
-      answer += lowerCase[lowerIndex];
+      answer += lowerCase[lowerCaseCipherIndex(element, shift)];
     } else if (isUpperCase(element)) {
-      const upperIndex = upperCipherIndex(element, shift);
-      answer += upperCase[upperIndex];
+      answer += upperCase[upperCaseCipherIndex(element, shift)];
     } else {
       answer += element;
     }
