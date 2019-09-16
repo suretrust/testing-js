@@ -1,24 +1,22 @@
+const getNextChar = (element) => String.fromCharCode(element.charCodeAt() + 1);
+
 const ceaserCipher = (string) => {
-    const answer = [];
-    const array = string.split('');
+  const answer = [];
+  const array = string.split('');
 
-    array.forEach(element => {
-        if (element === 'Z') {
-            answer.push('A');
-        } else if (element === 'z') {
-            answer.push('a');
-        } else if (".!?-:;\\-".includes(element)) {
-            answer.push(element);
-        } else {
-            answer.push(getNextChar(element));
-        }
-    });
+  array.forEach((element) => {
+    if (element === 'Z') {
+      answer.push('A');
+    } else if (element === 'z') {
+      answer.push('a');
+    } else if ('.!?-:;\\-'.includes(element)) {
+      answer.push(element);
+    } else {
+      answer.push(getNextChar(element));
+    }
+  });
 
-    return answer.join('');
-}
-
-const getNextChar = (element) => {
-    return String.fromCharCode(element.charCodeAt() + 1);
+  return answer.join('');
 };
 
 module.exports = ceaserCipher;
