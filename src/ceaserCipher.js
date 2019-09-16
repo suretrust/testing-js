@@ -1,9 +1,9 @@
 /* eslint-disable arrow-parens */
 
-
 const ceaserCipher = (string, shift) => {
   const lowerCase = 'abcdefghijklmnopqrstuvwxyz';
   const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
   const array = string.split('');
 
   let answer = '';
@@ -12,14 +12,14 @@ const ceaserCipher = (string, shift) => {
   const isLowerCase = char => lowerCase.includes(char);
 
   const lowerCipherIndex = (element) => {
-    const index = lowerCase.indexOf(element) + shift;
-    if (index > 25) return index - 26;
+    let index = lowerCase.indexOf(element) + shift;
+    if (index > 25) index %= 26;
     return index;
   };
 
   const upperCipherIndex = (element) => {
-    const index = upperCase.indexOf(element) + shift;
-    if (index > 25) return index - 26;
+    let index = upperCase.indexOf(element) + shift;
+    if (index > 25) index %= 26;
     return index;
   };
 

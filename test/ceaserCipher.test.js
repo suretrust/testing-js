@@ -12,3 +12,7 @@ test('returns the ceaser cipher for the given string', () => {
 test('returns the punctuation', () => {
   expect(ceaserCipher('ABC!.abc', 2)).toBe('CDE!.cde');
 });
+
+test('returns the punctuation', () => {
+  expect(ceaserCipher('ABC!.abc', 80)).toBe('CDE!.cde');
+});
