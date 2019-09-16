@@ -1,24 +1,40 @@
 /* eslint-disable arrow-parens */
 
-const getNextChar = element => String.fromCharCode(element.charCodeAt() + 1);
+const lowerCase = 'abcdefghijklmnopqrstuvwxyz';
+const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-const ceaserCipher = (string) => {
-  const answer = [];
+const isUpperCase = char => upperCase.includes(char);
+const isLowerCase = char => lowerCase.includes(char);
+
+const lowerCipherIndex = (element, shift) => {
+  const index = lowerCase.indexOf(element) + shift;
+  if (index > 25) return index - 26;
+  return index;
+};
+
+const upperCipherIndex = (element, shift) => {
+  const index = upperCase.indexOf(element) + shift;
+  if (index > 25) return index - 26;
+  return index;
+};
+
+const ceaserCipher = (string, shift) => {
+  let answer = '';
   const array = string.split('');
 
   array.forEach((element) => {
-    if (element === 'Z') {
-      answer.push('A');
-    } else if (element === 'z') {
-      answer.push('a');
-    } else if ('.!?-:;\\-'.includes(element)) {
-      answer.push(element);
+    if (isLowerCase(element)) {
+      const lowerIndex = lowerCipherIndex(element, shift);
+      answer += lowerCase[lowerIndex];
+    } else if (isUpperCase(element)) {
+      const upperIndex = upperCipherIndex(element, shift);
+      answer += upperCase[upperIndex];
     } else {
-      answer.push(getNextChar(element));
+      answer += element;
     }
   });
 
-  return answer.join('');
+  return answer;
 };
 
 module.exports = ceaserCipher;
