@@ -1,5 +1,5 @@
 # testing-js
-A simple testing JS sample using Jest.
+A simple JS testing practice using Jest.
 
 ## Contibutors
 - [Oluwaseun](https://github.com/bellom)
