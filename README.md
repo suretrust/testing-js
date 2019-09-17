@@ -1,4 +1,4 @@
-# Testing in JS
+# Testing in Javascript
 A simple JS testing practice using Jest.
 
 ## Contibutors
